@@ -4,5 +4,5 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
-app.listen(port. console.console.log(`server running Bro, its on ${port}`));
+app.listen(port, console.log(`server running Bro, its on ${port}`));
 
