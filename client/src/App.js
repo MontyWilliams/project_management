@@ -1,4 +1,5 @@
 import Header from './components/Header.jsx';
+import Clients from './components/Clients.jsx';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 // Create client and pass it the uri to our graphql interface
@@ -13,7 +14,7 @@ function App() {
       <ApolloProvider client={client}>
         <Header/>
         <div className="container">
-          <h1>Whatup tho</h1>
+          <Clients />
         </div>
         </ApolloProvider>
     </>
