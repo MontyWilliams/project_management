@@ -1,23 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import graphqllogo from './components/assets/graphql_logo.png'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Whatup tho</h1>
     </div>
   );
 }
