@@ -19,9 +19,7 @@ export default function Clients() {
 
   return (
     <>
-        {
-            !loading && !error && <h1>Clients</h1>
-        }
+        {!loading && !error && <h1>Clients</h1>}
     </>
   )
 }
