@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 const DELETE_CLIENT = gql`
     mutatoion deleteClient($id: ID!) {
-        deleteClient(id: $id); {
+        deleteClient(id: $id) {
             id
             name
             email
