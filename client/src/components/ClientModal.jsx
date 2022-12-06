@@ -29,6 +29,9 @@ function ClientModal() {
           return alert('YOu gotta fill out all the boxes');
         }
         addClient(name, email, phone);
+        setName('');
+        setEmail('');
+        setPhone('');
 
     }
 
@@ -79,11 +82,6 @@ function ClientModal() {
             data-bs-dismiss="modal"
             className="btn btn-secondary">Submit</button>
         </form>
-        
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
