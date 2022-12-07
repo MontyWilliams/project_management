@@ -32,7 +32,6 @@ function ClientModal() {
         setName('');
         setEmail('');
         setPhone('');
-
     }
 
   return (
