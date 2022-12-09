@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Spinner from './Spinner'
 import { FaList } from 'react-icons/fa';
 import { useMutation, useQuery } from '@apollo/client';
-// import { ADD_PROJECT} from '../mutations/projectMutations.js';
+import { ADD_PROJECT} from '../mutations/projectMutations.js';
 import { GET_PROJECTS } from '../queries/projectQueries.js';
 import { GET_CLIENTS } from '../queries/clientQueries.js';
 
@@ -12,6 +12,18 @@ function ProjectModal() {
     const [description, setDescription] = useState('');
     const [clientId, setClientId] = useState('');
     const [status, setStatus] = useState('new');
+
+    const [addProject] = useMutation(ADD_PROJECT, { variables: { name, description, clientId, status},
+      // Update the cache
+      update(cache, { data: {addProject}}) {    // Read the project info
+        const { projects } = cache.readQuery({ query: GET_PROJECTS });
+        cache.writeQuery({                      // Write the project info
+          query: GET_PROJECTS,
+          data: { projects: [ ...projects, addProject ] },
+
+        })
+      }
+    })
 
     // Get clients for select
     const { loading, error, data } = useQuery(GET_CLIENTS);
