@@ -1,17 +1,27 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { GET_PROJECT } from '../queries/projectQueries';
+import { UPDATE_PROJECT } from '../mutations/projectMutations';
 
 const EditProjectForm = ({ project }) => {
+    const nav = useNavigate();
     const [name, setName ] = useState(project.name);
     const [description, setDescription] = useState(project.description);
     const [status, setStatus] = useState('');
+
+    const [updateProject] = useMutation(UPDATE_PROJECT, {
+        variables: { id: project.id, name, description, status },
+        refetchQueries: [{ query: GET_PROJECT, variables: { id: project.id }}],
+        onCompleted: () => nav('/'),
+    });
 
     const onSub = (e) => {
         e.preventDefault();
         if(!name || !description || !status) {
             return alert('You gotta fill out everything!')
         }
+        updateProject(name, description, status);
     }
 
     return (
