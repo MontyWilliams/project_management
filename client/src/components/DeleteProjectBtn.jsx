@@ -10,7 +10,7 @@ export default function DeleteProjectBtn({ projectId }) {
     const [deleteProject] = useMutation(DELETE_PROJECT, {
         variables: { id: projectId },
         onCompleted: () => nav('/'),         // will navigate home after deleteProject  
-        refetchQueries: [{ query: GET_PROJECTS }],
+        refetchQueries: [{ query: GET_PROJECTS }], 
     });
 
   return (
@@ -18,7 +18,6 @@ export default function DeleteProjectBtn({ projectId }) {
         <button className="btn btn-danger m-2" onClick={deleteProject}>
             <FaTrash className='icon' /> Delete Project
         </button>
-
     </div>
   )
 }
