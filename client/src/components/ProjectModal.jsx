@@ -33,6 +33,8 @@ function ProjectModal() {
         if(name === '' || description === '' || status === '') {
           return alert('You gotta fill out all the boxes');
         }
+        
+        addProject(name, description, clientId, status);
    
         setName('');
         setDescription('');
