@@ -26,4 +26,4 @@ const DELETE_PROJECT = gql`
     })
     `
 
-export { ADD_PROJECT }
+export { ADD_PROJECT, DELETE_PROJECT }
