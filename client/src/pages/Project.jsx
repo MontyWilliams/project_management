@@ -26,7 +26,9 @@ export default function Project() {
 
                 <ClientInfo client={data.project.client} />
 
-                <DeleteProjectBtn projectId={data.project.id}/>
+                <EditProjectForm project={data.project} />
+
+                <DeleteProjectBtn projectId={data.project.id} />
             </div>
         )}
     </>
